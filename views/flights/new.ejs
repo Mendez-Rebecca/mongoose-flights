@@ -16,7 +16,7 @@
             <select name="airport">
                 <option value="AUS">AUS</option>
                 <option value="DFW">DFW</option>
-                <option value="DEN">DEN</option>
+                <option value="DEN" selected>DEN</option>
                 <option value="LAX">LAX</option>
                 <option value="SAN">SAN</option>
                 <option value="GEG">GEG</option>
@@ -28,7 +28,7 @@
         min="10" max="9999" pattern="\d{4}">
     </label><br>
     <label>Date:
-        <input type="datetime-local" name="departs">
+        <input type="datetime-local" name="departs" id="departsInput">
     </label><br>
     <button type="submit">Add Flight</button>
     </div>
