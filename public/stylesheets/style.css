@@ -54,3 +54,37 @@ th, td {
   border: 1px solid #DBE6E0;
   text-align: left;
 }
+
+.submit-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #DBE6E0;
+}
+
+label {
+  padding: 10px;
+  font-size: 16px;
+}
+
+select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #F3F7F5;
+}
