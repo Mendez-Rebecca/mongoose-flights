@@ -12,12 +12,12 @@
         </tr>
     </thead>
     <tbody>
-        <% flights.forEach(function(f) { %>
-            <tr>
-                <td><%= f.airline  %></td>
-                <td><%= f.airport  %></td>
-                <td><%= f.flightNo  %></td>
-                <td><%= f.departs  %></td>
+        <% flights.forEach(function(flight) { %>
+            <tr class="<%= flight.departurePassed ? 'past-departure' : '' %>">
+                <td><%= flight.airline  %></td>
+                <td><%= flight.airport  %></td>
+                <td><%= flight.flightNo  %></td>
+                <td><%= flight.departs  %></td>
             </tr>
         <% }); %>
     </tbody>

@@ -88,3 +88,7 @@ button {
 button:hover {
   background-color: #F3F7F5;
 }
+
+.past-departure {
+  color: red;
+}
