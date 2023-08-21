@@ -13,6 +13,7 @@
     </thead>
     <tbody>
         <% flights.forEach(function(flight) { %>
+            <a href="/flights/<%= flight._id %>/destinations">View Details</a>
             <tr class="<%= flight.departurePassed ? 'past-departure' : '' %>">
                 <td><%= flight.airline  %></td>
                 <td><%= flight.airport  %></td>
@@ -23,5 +24,7 @@
     </tbody>
 </table>
 </div>
+
+
 
 <%- include('../partials/footer') %>

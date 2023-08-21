@@ -1,6 +1,48 @@
 <%- include('../partials/header') %>
 
+<section>
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <div>Flight Number: </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departue: </div>
+    <div><%= flight.departs %></div>
+    <h3>Destination:</h3>
+    <ul>
+        <% flight.destinations.forEach(destination => { %>
+            <li>Airport: <%= destination.airport %>, Arrival: <%= destination.arrival %></li>
+        <% }) %>
+    </ul>
+</section>
 
+<h3>Add Destination</h3>
+    <form action="/flights/<%= flight.id_ %>/destinations" method="POST">
+        <label>Airline:
+            <select name="airline">
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+                <option value="Spirit">Spirit</option>
+                <option value="Frontier">Frontier</option>
+            </select>
+        </label><br>
+        <label>Airport:
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN" selected>DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+                <option value="GEG">GEG</option>
+                <option value="SEA">SEA</option>
+            </select>
+        </label>
+        <label for="arrival">Arrival Date/Time:</label>
+        <input type="datetime-local" name="arrival" id="arrival" required>
+        <button type="submit">Add Destination</button>
+</form>
 
 
 <%- include('../partials/footer') %>
