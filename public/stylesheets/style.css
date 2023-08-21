@@ -92,3 +92,10 @@ button:hover {
 .past-departure {
   color: red;
 }
+
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  color: #DBE6E0
+}

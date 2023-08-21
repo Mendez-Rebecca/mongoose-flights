@@ -14,7 +14,13 @@ async function show(req, res) {
 async function create(req, res) {
     const flight = await Flight.findById(req.params.id);
 
-    flight.destinations.push(req.body);
+    const newDestination = {
+        airport: req.body.airport,
+        arrival: new Date(req.body.arrival)
+    }
+
+    flight.destinations.push(newDestination);
+
     try {
         await flight.save();
     } catch(err) {

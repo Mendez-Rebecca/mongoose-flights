@@ -1,14 +1,18 @@
 <%- include('../partials/header') %>
 
 <section>
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departue: </div>
-    <div><%= flight.departs %></div>
+    <div>Airline:
+    <%= flight.airline %>
+    </div>
+    <div>Airport:
+    <%= flight.airport %>
+    </div>
+    <div>Flight Number:
+    <%= flight.flightNo %>
+    </div>
+    <div>Departue:
+    <%= flight.departs %>
+    </div>
     <h3>Destination:</h3>
     <ul>
         <% flight.destinations.forEach(destination => { %>
@@ -18,7 +22,7 @@
 </section>
 
 <h3>Add Destination</h3>
-    <form action="/flights/<%= flight.id_ %>/destinations" method="POST">
+    <form action="/flights/<%= flight._id %>/destinations" method="POST">
         <label>Airline:
             <select name="airline">
                 <option value="American">American</option>
