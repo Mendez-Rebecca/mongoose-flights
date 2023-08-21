@@ -23,17 +23,9 @@ async function index(req, res) {
 }
 
 function newFlight(req, res) {
-    const newFlight = new Flight();
+    const departsDate = Flight.getDateData();
 
-    const departs = newFlight.departs;
-    const year = departs.getFullYear();
-    const month = (departs.getMonth() + 1).toString().padStart(2, '0');
-    const day = departs.getDate().toString().padStart(2, '0');
-    const hours = departs.getHours().toString().padStart(2, '0');
-    const minutes = departs.getMinutes().toString().padStart(2, '0');
-
-    const departsDate = `${year}-${month}-${day}T${hours}:${minutes}`
-
+    console.log(departsDate);
     res.render('flights/new', { departsDate });
 }
 
