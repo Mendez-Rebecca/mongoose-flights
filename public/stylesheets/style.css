@@ -99,3 +99,22 @@ section {
   margin-top: 60px;
   color: #DBE6E0
 }
+
+.destination-container {
+  display: flex;
+  margin-right: 130px;
+}
+
+.destination-label {
+  margin-right: 10px;
+}
+
+.label {
+  font-style: bold;
+  font-size: 16px;
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+}
