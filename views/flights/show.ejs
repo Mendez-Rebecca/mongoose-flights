@@ -4,24 +4,24 @@
     <div>
         <div>
             <div class="content">
-            <div>Airline:
-                <%= flight.airline %>
+                <div>Airline:
+                    <%= flight.airline %>
+                </div>
+            <br>
+                <div>Airport:
+                    <%= flight.airport %>
+                </div>
+            <br>
+                <div>Flight Number:
+                    <%= flight.flightNo %>
+                </div>
+            <br>
+                <div>Departure:
+                    <%= flight.departs %>
+                </div>
             </div>
             <br>
-            <div>Airport:
-                <%= flight.airport %>
-            </div>
-            <br>
-            <div>Flight Number:
-                <%= flight.flightNo %>
-            </div>
-            <br>
-            <div>Departure:
-                <%= flight.departs %>
-            </div>
-            </div>
-            <br>
-            <div class="destination-container">
+                <div class="destination-container">
                 <div class="destination-label">
                     <h3>Destination:</h3>
                 </div>
@@ -39,7 +39,8 @@
     </div>
 </section>
 
-<h3>Add Destination</h3>
+<h3 class="form-bottom">Add Destination</h3>
+<div class="table-container">
     <form action="/flights/<%= flight._id %>/destinations" method="POST">
         <label>Airline:
             <select name="airline">
@@ -49,7 +50,7 @@
                 <option value="Spirit">Spirit</option>
                 <option value="Frontier">Frontier</option>
             </select>
-        </label><br>
+        </label>
         <label>Airport:
             <select name="airport">
                 <option value="AUS">AUS</option>
@@ -63,7 +64,8 @@
         </label>
         <label for="arrival">Arrival Date/Time:</label>
         <input type="datetime-local" name="arrival" id="arrival" required>
-        <button type="submit">Add Destination</button>
+        <button type="submit" class="destination-button">Add Destination</button>
+    </div>
 </form>
 
 

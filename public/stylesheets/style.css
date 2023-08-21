@@ -10,7 +10,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+.nav {
   color: #A0BBAC;
   font-size: 16px;
 }
@@ -21,6 +21,7 @@ nav {
   background-color: #668F78;
   padding: 30px 0;
   margin: -50px -50px;
+  font-size: 16px;
 }
 
 nav a {
@@ -76,7 +77,7 @@ input {
   padding: 5px;
 }
 
-button {
+.submit-button {
   padding: 10px;
   margin-top: 6px;
   margin-bottom: 20px;
@@ -86,7 +87,7 @@ button {
 }
 
 button:hover {
-  background-color: #F3F7F5;
+  background-color: #ACD8C8;
 }
 
 .past-departure {
@@ -117,4 +118,25 @@ section {
 .content {
   display: grid;
   justify-content: center;
+}
+
+.form-bottom {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #DBE6E0;
+}
+
+.destination-button {
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.view-details {
+  color: #A0BBAC;
 }

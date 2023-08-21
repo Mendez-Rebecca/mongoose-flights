@@ -2,29 +2,30 @@
 
 <h2>List of Flights</h2>
 <div class="table-container">
-<table>
-    <thead>
-        <tr>
-            <th>Airline</th>
-            <th>Airport</th>
-            <th>Flight Number</th>
-            <th>Departs</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% flights.forEach(function(flight) { %>
-            <a href="/flights/<%= flight._id %>">View Details</a>
-            <tr class="<%= flight.departurePassed ? 'past-departure' : '' %>">
-                <td><%= flight.airline  %></td>
-                <td><%= flight.airport  %></td>
-                <td><%= flight.flightNo  %></td>
-                <td><%= flight.departs  %></td>
+    <table>
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Airport</th>
+                <th>Flight Number</th>
+                <th>Departs</th>
+                <th>Details</th>
             </tr>
-        <% }); %>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <% flights.forEach(function(flight) { %>
+                <tr class="<%= flight.departurePassed ? 'past-departure' : '' %>">
+                    <td><%= flight.airline  %></td>
+                    <td><%= flight.airport  %></td>
+                    <td><%= flight.flightNo  %></td>
+                    <td><%= flight.departs  %></td>
+                    <td>
+                        <a href="/flights/<%= flight._id %>" class="view-details">View Details</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 </div>
-
-
 
 <%- include('../partials/footer') %>
