@@ -4,6 +4,8 @@ const ticketsCtrl = require('../controllers/tickets');
 
 //add a new
 router.get('/tickets/new', ticketsCtrl.new);
+
+router.get('/flights/:id/tickets/new', ticketsCtrl.newTicketSubmit);
 //add a create
 router.post('/tickets', ticketsCtrl.create);
 //associate a ticket with a flight

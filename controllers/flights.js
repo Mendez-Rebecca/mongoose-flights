@@ -42,9 +42,13 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-    Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
-            res.render('flights/show', { title: 'Ticket Details', flight, tickets});
-        })
-    })
+    try {
+        const flight = await Flight.findById(req.params.id);
+        const tickets = await Ticket.find({ flight: flight._id });
+
+        res.render('flights/show', { flight, tickets });
+    } catch (err) {
+        console.error(err);
+        res.render('error', { errorMsg: 'Error retrieving flight details' });
+    }
 }

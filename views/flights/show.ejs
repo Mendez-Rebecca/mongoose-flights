@@ -68,5 +68,23 @@
     </div>
 </form>
 
+<div class="ticket-list">
+    <h3>Tickets for this Flight:</h3>
+    <ul>
+        <% tickets.forEach(ticket => { %>
+            <li>
+                Seat: <%= ticket.seat %>
+                Price: $<%= ticket.price.toFixed(2) %>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<div class="new-ticket-link">
+    <a href="/flights/<%= flight._id %>/tickets/new" class="btn btn-primary">
+        Add New Ticket
+    </a>
+</div>
+
 
 <%- include('../partials/footer') %>

@@ -4,7 +4,8 @@ const Flight = require('../models/flight');
 module.exports = {
     new: newTicket,
     create,
-    addToFlight
+    addToFlight,
+    newTicketSubmit
 }
 
 async function newTicket(req, res) {
@@ -22,8 +23,15 @@ async function create(req, res) {
 }
 
 async function addToFlight(req, res) {
-    const flight = await Ticket.findById(req.params.id);
-    flight.flight.push(req.body.ticketId);
+    const flight = await Flight.findById(req.params.id);
+    const newTicket = new Ticket(req.body);
+    await newTicket.save();
+    flight.flight.push(newTicket._id);
     await flight.save();
-    res.redirect(`/flights/${movie._id}`);
+    res.redirect(`/flights/${flight._id}`);
+}
+
+function newTicketSubmit(req, res) {
+    const flightId = req.params.id;
+    res.render('tickets/new', { flightId });
 }
