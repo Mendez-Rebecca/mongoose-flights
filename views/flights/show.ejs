@@ -68,23 +68,29 @@
     </div>
 </form>
 
+<h2>Tickets:</h2>
+<br>
 <div class="ticket-list">
-    <h3>Tickets for this Flight:</h3>
     <ul>
-        <% tickets.forEach(ticket => { %>
-            <li>
-                Seat: <%= ticket.seat %>
-                Price: $<%= ticket.price.toFixed(2) %>
-            </li>
-        <% }) %>
+        <% tickets.forEach(tickets => { %>
+            <li>Seat: <%= tickets.seat %> - Price: <%= tickets.price %></li>
+        <% }); %>
     </ul>
 </div>
+<br>
 
-<div class="new-ticket-link">
-    <a href="/flights/<%= flight._id %>/tickets/new" class="btn btn-primary">
-        Add New Ticket
-    </a>
-</div>
+<form action="/flights/<%= flight._id %>/tickets" name="ticketsId" method="POST">
+    <div class="content">
+    <label for="seat" class="ticket-contents">Seat Number:</label>
+    <input type="text" id="seat" name="seat" pattern="[A-F][1-9]\d?" required>
+    <br>
+    <label for="price" class="ticket-contents">Price:</label>
+    <input type="number" id="price" name="price" required>
+    <br>
+    <button type="submit" class="submit-ticket">Submit Ticket</button>
+    </div>
+</form>
+
 
 
 <%- include('../partials/footer') %>

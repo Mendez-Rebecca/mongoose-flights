@@ -140,3 +140,24 @@ section {
 .view-details {
   color: #A0BBAC;
 }
+
+.submit-ticket {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.ticket-contents {
+  color: #A0BBAC;
+}
+
+.ticket-list {
+  display: flex;
+  justify-content: center;
+  color: #A0BBAC;
+}

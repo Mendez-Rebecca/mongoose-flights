@@ -26,8 +26,6 @@ async function index(req, res) {
 
 function newFlight(req, res) {
     const departsDate = Flight.getDateData();
-
-    console.log(departsDate);
     res.render('flights/new', { departsDate });
 }
 
@@ -45,10 +43,8 @@ async function show(req, res) {
     try {
         const flight = await Flight.findById(req.params.id);
         const tickets = await Ticket.find({ flight: flight._id });
-
         res.render('flights/show', { flight, tickets });
     } catch (err) {
-        console.error(err);
-        res.render('error', { errorMsg: 'Error retrieving flight details' });
+        console.log(err);
     }
 }
